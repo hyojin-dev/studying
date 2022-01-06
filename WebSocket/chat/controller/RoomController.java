@@ -55,8 +55,8 @@ public class RoomController {
     }
 
     @DeleteMapping("/room/{id}")
-    public void deleteRoom(@PathVariable Long id) {
-        chatRoomService.deleteRoom(id);
+    public String deleteRoom(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        return chatRoomService.deleteRoom(id, userDetails.getUser().getId());
     }
 
 }
