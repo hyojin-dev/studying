@@ -40,7 +40,7 @@ public class RoomController {
         return chatRoomService.getRoom(id);
     }
 
-    // 채팅벙 전체 이용자 수 조회
+    // 채팅방 전체 이용자 수 조회
     @GetMapping("/rooms/users")
     public int getChatUsers() {
         Long users = chatUserRepository.count();
@@ -54,6 +54,7 @@ public class RoomController {
         return chatRoomService.checkMyRoom(id, userDetails.getUser().getId());
     }
 
+    // 내가 만든 채팅방 삭제
     @DeleteMapping("/room/{id}")
     public String deleteRoom(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         return chatRoomService.deleteRoom(id, userDetails.getUser().getId());
