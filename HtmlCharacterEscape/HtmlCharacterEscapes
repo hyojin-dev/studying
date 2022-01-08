@@ -5,6 +5,14 @@ import com.fasterxml.jackson.core.io.CharacterEscapes;
 import com.fasterxml.jackson.core.io.SerializedString;
 import org.apache.commons.text.StringEscapeUtils;
 
+// WebSecurityConfig 에서 import 하여 been으로 등록하기
+//    @Bean
+//    public MappingJackson2HttpMessageConverter jsonEscapeConverter() {
+//        // MappingJackson2HttpMessageConverter Default ObjectMapper 설정 및 ObjectMapper Config 설정
+//        ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().build();
+//        objectMapper.getFactory().setCharacterEscapes(new HtmlCharacterEscapes());
+//        return new MappingJackson2HttpMessageConverter(objectMapper);
+//    }
 public class HtmlCharacterEscapes extends CharacterEscapes {
 
     private final int[] asciiEscapes;
