@@ -62,7 +62,7 @@ class SecondDoor implements Door{
 }
 
 class DoorEngineer {
-    String changDoor(House house, Door door) {
+    String changeDoor(House house, Door door) {
         house.setDoor(door);
         return house.houseName+"의 문을 "+door.getDoorName()+ "으로 변경하였습니다.";
     }
@@ -80,6 +80,6 @@ public class InterfaceAndAbstract {
         System.out.println(secondHouse.closeDoor());
 
         DoorEngineer doorEngineer = new DoorEngineer();
-        System.out.println(doorEngineer.changDoor(firstHouse, secondDoor));
+        System.out.println(doorEngineer.changeDoor(firstHouse, secondDoor));
     }
 }
