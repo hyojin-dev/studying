@@ -64,7 +64,7 @@ class SecondDoor implements Door{
     }
 }
 
-public class 인터페이스_추상클래스2 {
+public class abstract_interface {
     public static void main(String[] args) {
         FirstDoor firstDoor = new FirstDoor();
         SecondDoor secondDoor =  new SecondDoor();
