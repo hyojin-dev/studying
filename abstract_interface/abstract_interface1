@@ -57,7 +57,7 @@ class SecondDoor implements Door{
     }
 }
 
-public class Interface_abstract {
+public class InterfaceAndAbstract {
     public static void main(String[] args) {
         FirstDoor firstDoor = new FirstDoor();
         SecondDoor secondDoor =  new SecondDoor();
