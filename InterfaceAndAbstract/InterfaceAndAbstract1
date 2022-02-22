@@ -3,6 +3,7 @@ abstract class House {
     Door door;
     abstract String openDoor();
     abstract String closeDoor();
+    abstract void setDoor(Door door);
 }
 
 class FirstHouse extends House {
@@ -13,6 +14,7 @@ class FirstHouse extends House {
 
     String openDoor() {return houseName + "에서 " + door.getDoorName() + "(을)를 열었습니다."; }
     String closeDoor(){return houseName + "에서 " + door.getDoorName() + "(을)를 닫았습니다."; }
+    void setDoor(Door door) {this.door = door; }
 }
 
 class SecondHouse extends House {
@@ -23,6 +25,8 @@ class SecondHouse extends House {
 
     String openDoor() {return houseName + "에서 " + door.getDoorName() + "(을)를 열었습니다."; }
     String closeDoor(){return houseName + "에서 " + door.getDoorName() + "(을)를 닫았습니다."; }
+    void setDoor(Door door) {this.door = door; }
+
 }
 
 interface Door {
@@ -57,6 +61,12 @@ class SecondDoor implements Door{
     }
 }
 
+class DoorEngineer {
+    void changeDoor(House house, Door door) {
+        house.setDoor(door);
+    }
+}
+
 public class InterfaceAndAbstract {
     public static void main(String[] args) {
         FirstDoor firstDoor = new FirstDoor();
@@ -67,5 +77,8 @@ public class InterfaceAndAbstract {
 
         System.out.println(firstHouse.openDoor());
         System.out.println(secondHouse.closeDoor());
+
+        DoorEngineer doorEngineer = new DoorEngineer();
+        doorEngineer.changDoor(firstHouse, secondDoor);
     }
 }
