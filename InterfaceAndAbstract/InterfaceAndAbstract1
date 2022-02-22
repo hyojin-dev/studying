@@ -1,9 +1,13 @@
 abstract class House {
     String houseName;
     Door door;
-    abstract String openDoor();
-    abstract String closeDoor();
-    abstract void setDoor(Door door);
+    String openDoor() {
+        return this.houseName + "에서 " + this.door.getDoorName() + "(을)를 열었습니다.";
+    }
+    String closeDoor() {
+        return this.houseName + "에서 " + this.door.getDoorName() + "(을)를 닫았습니다.";
+    }
+    void setDoor(Door door) {this.door = door; }
 }
 
 class FirstHouse extends House {
@@ -11,10 +15,6 @@ class FirstHouse extends House {
         this.houseName = houseName;
         this.door = door;
     }
-
-    String openDoor() {return houseName + "에서 " + door.getDoorName() + "(을)를 열었습니다."; }
-    String closeDoor(){return houseName + "에서 " + door.getDoorName() + "(을)를 닫았습니다."; }
-    void setDoor(Door door) {this.door = door; }
 }
 
 class SecondHouse extends House {
@@ -22,11 +22,6 @@ class SecondHouse extends House {
         this.houseName = houseName;
         this.door = door;
     }
-
-    String openDoor() {return houseName + "에서 " + door.getDoorName() + "(을)를 열었습니다."; }
-    String closeDoor(){return houseName + "에서 " + door.getDoorName() + "(을)를 닫았습니다."; }
-    void setDoor(Door door) {this.door = door; }
-
 }
 
 interface Door {
