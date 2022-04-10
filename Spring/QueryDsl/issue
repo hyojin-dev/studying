@@ -1,2 +1,2 @@
-Attempt to recreate a file for type .. 
-오류 발생 시 Gradel -> Tasks -> other -> compileQuerydsl 로 생성된 파일을 삭제하고 재실행하여 Q타입을 새로 생성하여 해결
+Attempt to recreate a file for type .. QType 객체가 이미 생성되어 있어서 발생되는 오류
+해결방법 Gradel -> Tasks -> other -> compileQuerydsl 로 생성된 파일을 삭제하고 재실행하여 Q타입을 새로 생성하여 해결
